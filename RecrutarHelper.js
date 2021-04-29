@@ -2,7 +2,7 @@
 // @name         Tribal Wars - Recrutar Helper
 // @namespace    https://github.com/silentw
 // @updateURL    https://raw.githubusercontent.com/silentw/tribal-wars-scripts/master/RecrutarHelper.js
-// @version      0.2.1
+// @version      0.2.2
 // @description  Helper para a página recrutar
 // @author       silentw
 // @match        https://*/game.php?village=*&screen=train*
@@ -42,6 +42,6 @@
         // extract the total troop quantity from text
         let troopQuantity = ~~$troopQuantity.text().match(/\d+\/\d+/g)[0].split('/')[1];
         // append the total quantity of troop
-        $troopQuantity.append(`<div><span class="inactive" style="font-size: 11px;">(${(troops[troopName] || 0) > 0 ? `+ ${(troops[troopName] || 0)} = ` : ``}${(troops[troopName] || 0) + troopQuantity})</span></div>`);
+        $troopQuantity.append(`<div><span class="inactive" style="font-size: 11px;">(${(troops[troopName] || 0) > 0 ? `<small>+${(troops[troopName] || 0)} = </small>` : ``}${(troops[troopName] || 0) + troopQuantity})</span></div>`);
     });
 })();
